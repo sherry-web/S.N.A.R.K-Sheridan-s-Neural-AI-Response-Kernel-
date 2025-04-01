@@ -1,0 +1,184 @@
+/* Terminal Theme for S.N.A.R.K. - Improvements */
+body.terminal-theme {
+    background-color: #0a0a0a;
+    color: #33ff33;
+    font-family: 'Courier New', monospace;
+    transition: all 0.3s ease;
+}
+
+body.terminal-theme .container {
+    background-color: #000000;
+    border: 1px solid #33ff33;
+    box-shadow: 0 0 20px rgba(51, 255, 51, 0.5);
+    animation: bootupGlow 2s ease-in-out;
+}
+
+/* Improved header styling */
+body.terminal-theme .header {
+    background-color: #000000;
+    border-bottom: 1px solid #33ff33;
+    padding: 0.8rem 1rem;
+}
+
+body.terminal-theme .app-title {
+    color: #33ff33;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: normal;
+    font-size: 1.2rem;
+}
+
+body.terminal-theme .app-title::before {
+    content: "> ";
+    animation: terminalBlink 1s step-end infinite;
+}
+
+body.terminal-theme .app-title span {
+    color: #ff3333;
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Improved button styling for better visibility */
+body.terminal-theme .header-button {
+    background-color: #001100;
+    color: #33ff33;
+    border: 1px solid #33ff33;
+    padding: 0.4rem 0.8rem;
+    transition: all 0.2s ease;
+}
+
+body.terminal-theme .header-button:hover {
+    background-color: #33ff33;
+    color: #000000;
+    box-shadow: 0 0 10px rgba(51, 255, 51, 0.7);
+}
+
+/* Improved messages styling for readability */
+body.terminal-theme .user-message .message-text {
+    background-color: #001a00;
+    color: #33ff33;
+    border: 1px solid #33ff33;
+    font-family: 'Courier New', monospace;
+    margin-left: 1rem;
+    max-width: 80%;
+}
+
+body.terminal-theme .ai-message .message-text {
+    background-color: #1a0000;
+    color: #ff3333;
+    border: 1px solid #ff3333;
+    font-family: 'Courier New', monospace;
+    margin-right: 1rem;
+    max-width: 80%;
+}
+
+body.terminal-theme .system-message-content {
+    background-color: #001a1a;
+    color: #33ffff;
+    border: 1px solid #33ffff;
+    font-family: 'Courier New', monospace;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    animation: bootupText 1s ease-in-out;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    body.terminal-theme .header-button {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+    }
+    
+    body.terminal-theme .app-title {
+        font-size: 1rem;
+    }
+    
+    body.terminal-theme .user-message .message-text,
+    body.terminal-theme .ai-message .message-text {
+        max-width: 100%;
+        margin: 0.5rem;
+    }
+}
+
+/* Custom bootup animation */
+@keyframes bootupGlow {
+    0% {
+        box-shadow: 0 0 2px rgba(51, 255, 51, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(51, 255, 51, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(51, 255, 51, 0.5);
+    }
+}
+
+@keyframes bootupText {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    55% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Improved input field */
+body.terminal-theme .input-field {
+    background-color: #001100;
+    color: #33ff33;
+    border: 1px solid #33ff33;
+    padding: 0.8rem 1rem;
+    transition: all 0.2s ease;
+}
+
+body.terminal-theme .input-field:focus {
+    box-shadow: 0 0 10px rgba(51, 255, 51, 0.5);
+    background-color: #002200;
+}
+
+body.terminal-theme .input-field::placeholder {
+    color: #33ff33;
+    opacity: 0.5;
+}
+
+/* Better button and avatar visibility */
+body.terminal-theme .user-avatar,
+body.terminal-theme .ai-avatar {
+    font-weight: bold;
+    border-width: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.terminal-theme .input-button,
+body.terminal-theme .mic-button {
+    border-width: 2px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Active states for better feedback */
+body.terminal-theme .input-button:active,
+body.terminal-theme .mic-button:active,
+body.terminal-theme .header-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 0 5px rgba(51, 255, 51, 1);
+}
